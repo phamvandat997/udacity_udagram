@@ -32,6 +32,13 @@ jobs:
       #       npm run frontend:e2e
 
 # Building the frontend
+      - run:
+          name: Front-End Build
+          command: |
+            npm run frontend:build
+      - run:
+          name: List Build Directory
+          command: ls -R ./dist
 # Deploying the frontend to AWS S3
       - run:
           name: Front-End Deploy
