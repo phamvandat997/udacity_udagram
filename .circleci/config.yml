@@ -36,9 +36,6 @@ jobs:
           name: Front-End Build
           command: |
             npm run frontend:build
-      - run:
-          name: List Build Directory
-          command: ls -R ./udagram-fronend/www
 # Deploying the frontend to AWS S3
       - run:
           name: Front-End Deploy
