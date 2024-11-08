@@ -1,0 +1,3 @@
+# Setting EB deploy artifact to Archive.zip
+deploy:
+  artifact: ./www/Archive.zip
