@@ -1,94 +1,67 @@
 version: 2.1
-
-# Orbs to simplify integration
 orbs:
+  # orgs contain basc recipes and reproducible actions (install node, aws, etc.)
   node: circleci/node@5.0.2
   eb: circleci/aws-elastic-beanstalk@2.0.1
   aws-cli: circleci/aws-cli@3.1.1
-
+  # different jobs are calles later in the workflows sections
 jobs:
   build:
     docker:
-      # Using a Node.js image for building the app
+      # the base image can run most needed actions with orbs
       - image: "cimg/node:14.15"
     steps:
-      # Install Node and checkout code
+      # install node and checkout code
       - node/install:
-          node-version: '14.15'  # specify your node version here
+          node-version: '14.15'         
       - checkout
-
-      # Install front-end dependencies
+      # Use root level package.json to install dependencies in the frontend app
       - run:
           name: Install Front-End Dependencies
           command: |
-            echo "NODE --version"
-            node --version
-            echo "NPM --version"
-            npm --version
-            npm install  # assuming the frontend dependencies are in the root directory
-
-      # Install back-end dependencies (for example, if backend is a Node.js app)
+            echo "NODE --version" 
+            echo $(node --version)
+            echo "NPM --version" 
+            echo $(npm --version)
+            npm run frontend:install
+      # TODO: Install dependencies in the the backend API          
       - run:
           name: Install API Dependencies
           command: |
-            echo "Installing backend dependencies"
-            cd backend
-            npm install  # Change to your backend folder and install dependencies
-
-      # Lint the frontend code
+           echo "TODO: Install dependencies in the the backend API  "
+      # TODO: Lint the frontend
       - run:
           name: Front-End Lint
           command: |
-            echo "Linting frontend code"
-            npm run lint  # Assuming you have a lint script in your package.json
-
-      # Build the frontend app
+            echo "TODO: Lint the frontend"
+      # TODO: Build the frontend app
       - run:
           name: Front-End Build
           command: |
-            echo "Building frontend app"
-            npm run build  # Assuming you have a build script for frontend
-
-      # Lint the backend code
-      - run:
-          name: API Lint
-          command: |
-            echo "Linting backend code"
-            cd backend
-            npm run lint  # Lint the backend (if it's Node.js)
-
-      # Build the backend API (if backend is Node.js)
+            echo "TODO: Build the frontend app"
+      # TODO: Build the backend API      
       - run:
           name: API Build
           command: |
-            echo "Building backend API"
-            cd backend
-            npm run build  # Assuming you have a build script for backend
-
+            echo "TODO: Build the backend API"
+  # deploy step will run only after manual approval
   deploy:
     docker:
       - image: "cimg/base:stable"
-      # Additional setup for AWS, Elastic Beanstalk, and Node.js
+      # more setup needed for aws, node, elastic beanstalk
     steps:
-      # Setup AWS CLI and EB CLI
       - node/install:
           node-version: '14.15' 
       - eb/setup
       - aws-cli/setup
       - checkout
-
-      # Deploy to Elastic Beanstalk
       - run:
-          name: Deploy App to Elastic Beanstalk
+          name: Deploy App
+          # TODO: Install, build, deploy in both apps
           command: |
-            echo "Deploying application to AWS Elastic Beanstalk"
-            # Initialize Elastic Beanstalk application if not already done
-            eb init -p node.js --region us-east-1 Demo-app-env  # Replace with your app's name and region
-            # Deploy to Elastic Beanstalk
-            eb deploy
-
+            echo "# TODO: Install, build, deploy in both apps"
+            
 workflows:
-  version: 2
   udagram:
     jobs:
       - build
@@ -96,7 +69,7 @@ workflows:
           filters:
             branches:
               only:
-                - master  # Only require approval for master branch
+                - master
           type: approval
           requires:
             - build
