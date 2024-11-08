@@ -38,7 +38,7 @@ jobs:
             npm run frontend:build
       - run:
           name: List Build Directory
-          command: ls -R ../www
+          command: ls -R www
 # Deploying the frontend to AWS S3
       - run:
           name: Front-End Deploy
