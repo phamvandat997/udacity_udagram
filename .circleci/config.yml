@@ -60,7 +60,7 @@ jobs:
           # TODO: Install, build, deploy in both apps
           command: |
             npm install -g aws-cli elastic-beanstalk
-            eb init -p node.js your-app-name --region $AWS_REGION
+            eb init -p node.js your-app-name --region us-east-1
             eb deploy
             
 workflows:
