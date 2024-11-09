@@ -14,11 +14,11 @@ jobs:
       - checkout
       - aws-cli/setup
       - run:
-          name: Check AWS Environment Variables
-          command: |
-            echo "AWS_ACCESS_KEY_ID is set"
-            echo "AWS_SECRET_ACCESS_KEY is set"
-            echo "AWS_DEFAULT_REGION is set"
+          name: Print AWS_ACCESS_KEY_ID
+          command: echo "AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID"
+      - run:
+          name: Print AWS Secret Access Key
+          command: echo "AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY"
 # Installing the frontend dependencies
       - run:
           name: Front-End Install
