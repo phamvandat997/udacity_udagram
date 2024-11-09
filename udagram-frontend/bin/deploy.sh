@@ -1,1 +1,1 @@
-aws s3 cp ./www https://us-east-1.console.aws.amazon.com/s3/buckets/udagramweb?region=us-east-1&bucketType=general
+aws s3 sync ./www https://us-east-1.console.aws.amazon.com/s3/buckets/udagramweb?region=us-east-1&bucketType=general
