@@ -8,15 +8,17 @@ jobs:
   build-and-deploy:
     docker:
       - image: 'cimg/base:stable'
-    environment:
-      AWS_ACCESS_KEY_ID: 'ASIAUSLT3CNKYHB2SKWY'
-      AWS_SECRET_ACCESS_KEY: 'VDxg2uKfhekeIo2hSAPQ4tYRZCUwnGJWS7Kz4sqG'
-      AWS_DEFAULT_REGION: us-east-1
     steps:
       - node/install:
           node-version: '14.15'
       - checkout
       - aws-cli/setup
+      - run:
+          name: Print AWS Environment Variables
+          command: |
+            echo $AWS_ACCESS_KEY_ID
+            echo $AWS_SECRET_ACCESS_KEY
+            echo $AWS_DEFAULT_REGION
 # Installing the frontend dependencies
       - run:
           name: Front-End Install
