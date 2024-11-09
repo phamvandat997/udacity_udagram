@@ -1,1 +1,1 @@
-aws s3 cp --recursive --acl public-read ./www s3://arn:aws:s3:::udagramweb
+aws s3 cp --recursive --acl public-read ./www https://us-east-1.console.aws.amazon.com/s3/buckets/udagramweb?region=us-east-1&bucketType=general
