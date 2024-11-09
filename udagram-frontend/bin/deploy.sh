@@ -1,1 +1,1 @@
-aws s3 sync ./www s3://udagramweb --region us-east-1
+aws s3 sync ./www s3://udagramweb
