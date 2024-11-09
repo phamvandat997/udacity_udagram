@@ -1,1 +1,1 @@
-aws s3 cp ./www/ https://udagramweb.s3.us-east-1.amazonaws.com
+aws s3 cp ./www/ s3://udagramweb/ --recursive --region us-east-1 --debug
