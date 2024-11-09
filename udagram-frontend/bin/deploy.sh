@@ -1,1 +1,1 @@
-aws s3 sync ./www s3://udagramweb
+aws s3 cp ./www s3://udagramweb
