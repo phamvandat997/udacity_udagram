@@ -1,37 +1,49 @@
 # Udagram
+[![Build Status](https://circleci.com/gh/iahmediibrahim/udacity-udagram-circleci.svg?style=svg)](https://circleci.com/github/iahmediibrahim/udacity-udagram-circleci)
 
-- [Udagram](#udagram)
-  - [Description](#description)
-  - [Getting Started](#getting-started)
-    - [Project Setup](#project-setup)
-  - [Built With](#built-with)
-  - [Documentation](#documentation)
-  - [CopyRights](#copyrights)
+This project is part of the Udacity FullStack JavaScript nanodegree. The code was given as a starter project and the task was to employ and adapt the code to get it working and hosted on AWS.
 
----
+The project is available at
 
-## Description
-This application is provided from Udacity to be hosted into **AWS** with Pipeline using **CircleCI**.
-The Project is for the **Advanced Full-Stack Web Development Nanodegree Program - Deploying & Hosting a Full-Stack Application**.
+http://test-udagram.s3-website-us-east-1.amazonaws.com
 
-## Getting Started
+See additional documentation in the documentation folder.
 
-1. Clone this repo locally into the location of your choice.
-2. Open a terminal and navigate to the root of the repo
-3. follow the instructions in the Project Setup
+## Configuration Screenshots
 
-The project can run but is missing some information to connect to the database and storage service.
+### Elastic Beanstalk Environment
 
-### Project Setup
+![Elastic Beanstalk Environment](./documentation/images/eb.png)
 
-1. Clone the project - `git clone https://github.com/Storm-Maker/Hosting-Fullstack-AWS.git`
-2. Go into the project directory - `cd udagram-frontend`
-3. Install the dependencies - `npm install`
-4. Start the frontend - `npm run start`
-5. Open new terminal - `cd ../udagram-api`
-6. Setup `.env`
-7. Install the dependencies - `npm install`
-8. start the backend - `npm run start`
+### FrontEnd S3 Bucket
+
+![FrontEnd S3 Bucket](./documentation/images/frontend_s3.png)
+
+### Media S3 Bucket
+
+![Media S3 Bucket](./documentation/images/media_s3.png)
+
+### PostgreSQL RDS database
+
+![PostgreSQL RDS database](./documentation/images/rds.png)
+
+### CircleCI Pipeline
+
+![CircleCI Pipeline](./documentation/images/pipeline1.png)
+
+![CircleCI Pipeline](./documentation/images/pipeline2.png)
+
+added secrets here
+
+![CircleCI Pipeline environment variables](./documentation/images/pipeline%20env.png)
+
+Schema
+
+![Pipeline Schema](./documentation/images/pipeline.png)
+
+### Architecture
+
+![Architecture](./documentation/images/architecture.png)
 
 ## Built With
 
@@ -39,12 +51,6 @@ The project can run but is missing some information to connect to the database a
 - [Node](https://nodejs.org) - Javascript Runtime
 - [Express](https://expressjs.com/) - Javascript API Framework
 
-## Documentation
+## License
 
-- Detailed Documentation is provided in `./Docs/README.md`
-- Screenshots of the AWS configurations and the CircleCI are provided in `./Docs/Screenshots/`
-- Architecture Diagrams of the AWS and the Pipeline are provided in `./Docs/Architecture Diagrams/`
-## CopyRights
-- The project code was provided by Udacity for the purpose of hosting a fullstack application into AWS.
-- AWS Architecture Icons `https://aws.amazon.com/architecture/icons/`
-- Diagrams.Net `https://www.diagrams.net/`
+[License](LICENSE.txt)

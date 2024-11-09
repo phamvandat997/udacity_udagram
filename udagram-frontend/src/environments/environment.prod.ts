@@ -3,10 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  appName: "myprojectbucketz",
-  apiHost: "http://myprojectv3-env.eba-futr4mze.us-east-1.elasticbeanstalk.com:8080/api/v0",
-};
+	production: true,
+	appName: 'Udagram',
+	apiHost: 'http://udagram-api-dev.eba-bk3physs.us-east-1.elasticbeanstalk.com/api/v0',
+}
 
 /*
  * For easier debugging in development mode, you can import the following file

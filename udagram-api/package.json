@@ -2,20 +2,16 @@
   "name": "udagram-api",
   "version": "2.0.0",
   "description": "",
-  "main": "src/server.js",
+  "main": "server.js",
   "scripts": {
     "start": "node .",
     "tsc": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only ./src/server.ts",
     "prod": "tsc && node ./www/server.js",
     "clean": "rm -rf www/ || true",
+    "deploy": "eb use udagram-api-dev && eb deploy udagram-api-dev && eb setenv AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_BUCKET=$AWS_BUCKET AWS_REGION=$AWS_DEFAULT_REGION AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY JWT_SECRET=$JWT_SECRET POSTGRES_DB=$POSTGRES_DB POSTGRES_HOST=$POSTGRES_HOST POSTGRES_PASSWORD=$POSTGRES_PASSWORD DB_PORT=$POSTGRES_PORT POSTGRES_USERNAME=$POSTGRES_USERNAME --profile default",
     "build": "npm run clean && tsc && cp -rf src/config www/config && cp .npmrc www/.npmrc && cp package.json www/package.json && cd www && zip -r Archive.zip . && cd ..",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "deploy": "chmod +x bin/deploy.sh && bin/deploy.sh",
-    "aws-eb": "chmod +x bin/aws-eb.sh && bin/aws-eb.sh",
-    "change-main": "npm run install-jk-sponge && npm run edit-main-entry-point",
-    "install-jk-sponge": "chmod +x bin/install-jk-sponge.sh && bin/install-jk-sponge.sh",
-    "edit-main-entry-point": "chmod +x bin/edit-main-entry.sh && bin/edit-main-entry.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "Gabriel Ruttner",
