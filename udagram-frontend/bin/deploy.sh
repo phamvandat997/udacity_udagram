@@ -1,1 +1,1 @@
-aws s3 sync public-read ./udagram-frontend/www arn:aws:s3:::udagramweb --delete
+aws s3 cp --recursive --acl public-read ./www s3://udagramweb/
